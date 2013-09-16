@@ -11,7 +11,9 @@ Set your viewcontroller as UINavigationController delegate:
 
 And Implement this method:
 
-    - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+    
+    -(id<UIViewControllerAnimatedTransitioning>)navigationController:
+    (UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
     {
         OldStyleNavigationControllerAnimatedTransition * animation = [[OldStyleNavigationControllerAnimatedTransition alloc] init];
         animation.operation = operation;
