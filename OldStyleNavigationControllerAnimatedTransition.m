@@ -1,6 +1,6 @@
 //
 //  SXTNavigationControllerAnimatedTransition.m
-//  Sixti
+//  
 //
 //  Created by Davide Di Stefano on 16/09/13.
 //  Copyright (c) 2013 ReturnService. All rights reserved.
@@ -50,7 +50,6 @@
     } completion:^(BOOL finished) {
         [fromViewController.view removeFromSuperview];
         [transitionContext completeTransition:YES];
-        
     }];
 }
 
