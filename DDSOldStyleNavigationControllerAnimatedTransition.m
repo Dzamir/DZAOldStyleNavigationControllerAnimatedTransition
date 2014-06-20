@@ -1,14 +1,14 @@
 //
-//  SXTNavigationControllerAnimatedTransition.m
+//  DDSOldStyleNavigationControllerAnimatedTransition.m
 //  
 //
 //  Created by Davide Di Stefano on 16/09/13.
 //  Copyright (c) 2013 ReturnService. All rights reserved.
 //
 
-#import "OldStyleNavigationControllerAnimatedTransition.h"
+#import "DDSOldStyleNavigationControllerAnimatedTransition.h"
 
-@implementation OldStyleNavigationControllerAnimatedTransition
+@implementation DDSOldStyleNavigationControllerAnimatedTransition
 
 - (id)init {
     self = [super init];

@@ -1,5 +1,5 @@
 //
-//  SXTNavigationControllerAnimatedTransition.h
+//  DDSOldStyleNavigationControllerAnimatedTransition.h
 //  
 //
 //  Created by Davide Di Stefano on 16/09/13.
@@ -23,12 +23,12 @@ And Implement this method:
 	-(id<UIViewControllerAnimatedTransitioning>)navigationController:
 	(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 	{
-	    OldStyleNavigationControllerAnimatedTransition * animation = [[OldStyleNavigationControllerAnimatedTransition alloc] init];
+	    DDSOldStyleNavigationControllerAnimatedTransition * animation = [[DDSOldStyleNavigationControllerAnimatedTransition alloc] init];
 	    animation.operation = operation;
 	    return animation;
 	}
 */
-@interface OldStyleNavigationControllerAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
+@interface DDSOldStyleNavigationControllerAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
 // push or pop
 @property (nonatomic, assign) UINavigationControllerOperation operation;
