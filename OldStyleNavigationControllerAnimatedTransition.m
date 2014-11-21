@@ -42,17 +42,15 @@
         fromEndX = screenFrame.size.width;
     }
 
-    toViewController.view.frame = CGRectOffset(screenFrame, toStartX, 0);
+    toViewController.view.frame = CGRectOffset(toViewController.view.frame, toStartX, 0);
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
     {
-        toViewController.view.frame = screenFrame;
+        toViewController.view.frame = CGRectOffset(toViewController.view.frame, -toStartX, 0);
         fromViewController.view.frame = CGRectOffset(screenFrame, fromEndX, 0);
     } completion:^(BOOL finished) {
         [fromViewController.view removeFromSuperview];
         [transitionContext completeTransition:YES];
     }];
 }
-
-
 
 @end
