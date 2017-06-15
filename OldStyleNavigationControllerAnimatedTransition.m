@@ -27,30 +27,37 @@
 {
     UIViewController * fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController * toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    CGRect screenFrame = fromViewController.view.frame;
     UIView * containerView = [transitionContext containerView];
+    CGRect screenFrame = containerView.frame;
     [containerView addSubview:toViewController.view];
-    CGFloat toStartX, fromEndX;
-
+    
+    [toViewController beginAppearanceTransition:YES animated:YES];
+    
     if (_operation == UINavigationControllerOperationPush)
     {
-        toStartX = screenFrame.size.width;
-        fromEndX = -screenFrame.size.width;
+        toViewController.view.frame = CGRectMake(screenFrame.size.width, fromViewController.view.frame.origin.y, screenFrame.size.width, fromViewController.view.frame.size.height);
+            
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
+        {
+            fromViewController.view.frame = CGRectMake(-screenFrame.size.width, fromViewController.view.frame.origin.y, fromViewController.view.frame.size.width, fromViewController.view.frame.size.height);
+            toViewController.view.frame = CGRectMake(screenFrame.origin.x, fromViewController.view.frame.origin.y, screenFrame.size.width, fromViewController.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [toViewController endAppearanceTransition];
+            [transitionContext completeTransition:YES];
+        }];
     } else
     {
-        toStartX = -screenFrame.size.width;
-        fromEndX = screenFrame.size.width;
+        toViewController.view.frame = CGRectMake(-screenFrame.size.width, fromViewController.view.frame.origin.y, screenFrame.size.width, fromViewController.view.frame.size.height);
+    
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
+        {
+            fromViewController.view.frame = CGRectMake(screenFrame.size.width, fromViewController.view.frame.origin.y, fromViewController.view.frame.size.width, fromViewController.view.frame.size.height);
+            toViewController.view.frame = CGRectMake(screenFrame.origin.x, fromViewController.view.frame.origin.y, screenFrame.size.width, fromViewController.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [toViewController endAppearanceTransition];
+            [transitionContext completeTransition:YES];
+        }];
     }
-
-    toViewController.view.frame = CGRectOffset(toViewController.view.frame, toStartX, 0);
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
-    {
-        toViewController.view.frame = CGRectOffset(toViewController.view.frame, -toStartX, 0);
-        fromViewController.view.frame = CGRectOffset(screenFrame, fromEndX, 0);
-    } completion:^(BOOL finished) {
-        [fromViewController.view removeFromSuperview];
-        [transitionContext completeTransition:YES];
-    }];
 }
 
 @end
