@@ -1,18 +1,20 @@
 //
-//  SXTNavigationControllerAnimatedTransition.m
+//  DZAOldStyleNavigationControllerAnimatedTransition.m
 //  
 //
 //  Created by Davide Di Stefano on 16/09/13.
-//  Copyright (c) 2013 ReturnService. All rights reserved.
+//  Copyright (c) 2013 Davide Di Stefano. All rights reserved.
 //
 
-#import "OldStyleNavigationControllerAnimatedTransition.h"
+#import "DZAOldStyleNavigationControllerAnimatedTransition.h"
 
-@implementation OldStyleNavigationControllerAnimatedTransition
+@implementation DZAOldStyleNavigationControllerAnimatedTransition
 
-- (id)init {
+- (id)init
+{
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _operation = UINavigationControllerOperationPush;
     }
     return self;

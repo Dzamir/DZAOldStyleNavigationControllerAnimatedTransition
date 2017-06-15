@@ -1,9 +1,9 @@
 //
-//  SXTNavigationControllerAnimatedTransition.h
+//  DZAOldStyleNavigationControllerAnimatedTransition.h
 //  
 //
 //  Created by Davide Di Stefano on 16/09/13.
-//  Copyright (c) 2013 ReturnService. All rights reserved.
+//  Copyright (c) 2013 Davide Di Stefano. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -28,7 +28,7 @@ And Implement this method:
 	    return animation;
 	}
 */
-@interface OldStyleNavigationControllerAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
+@interface DZAOldStyleNavigationControllerAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
 // push or pop
 @property (nonatomic, assign) UINavigationControllerOperation operation;
