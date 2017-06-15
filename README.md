@@ -36,6 +36,6 @@ And Implement this method:
     override func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         let animation = DZAOldStyleNavigationControllerAnimatedTransition()
-	animation.operation = operation
-	return animation
+        animation.operation = operation
+        return animation
     }
