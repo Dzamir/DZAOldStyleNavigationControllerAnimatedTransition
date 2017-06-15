@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DZAOldStyleNavigationControllerAnimatedTransition"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Old style push and pop animation in which the two views scrolls together"
   s.description      = <<-DESC
                        This class implements the UIViewControllerAnimatedTransitioning protocol and it lets you use the old style push and pop animation (before iOS7) in which the two views scrolls together. Useful for UINavigationController with a transparent background in which the views overlaps with the iOS7 animation style.
